@@ -1,16 +1,21 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/mystyle.css' %}">
     <title>FirstApp</title>
 </head>
 <body>
-    <h1>Hello there!!
+    <h1>Hello there!!</h1>
         <P>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque animi quos delectus rerum at culpa, asperiores voluptas odit eum quisquam. Dolor, rerum cumque. Nihil vero atque numquam blanditiis natus exercitationem?
         </P>
+        <br>
         {{key1}}
-    </h1>
+        <br>
+        <img src="{% static '/image/image.jpg' %}" alt="My image" >   
+    
 </body>
 </html>
