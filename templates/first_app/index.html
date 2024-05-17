@@ -1,5 +1,5 @@
-{% load static %}
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -15,7 +15,25 @@
         <br>
         {{key1}}
         <br>
-        <img src="{% static '/image/image.jpg' %}" alt="My image" >   
+        <img src="{% static '/image/image.jpg' %}" alt="My image" >  
+        
+        <br>
+
+        <h4>Showing the Musician List Data</h4>
+        <table border="1">
+            <tr>
+                <th>First_Name</th>
+                <th>last_Name</th>
+                <th>Instrument</th>
+            </tr>
+            {% for row in musician%}
+            <tr>
+                <td>{{row.first_name}}</td>
+                <td>{{row.last_name}}</td>
+                <td>{{row.instrument}}</td>
+            </tr>
+            {% endfor %}
+        </table>
     
 </body>
 </html>
