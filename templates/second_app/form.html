@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+
+    <h2>this form is from Form Library</h2>
+    <form action="" method="post">
+        {{form.as_p}}
+        {% csrf_token %}
+        <input type="submit" name="submit" value="submit" required>
+    </form>
+    <br>
+    {% if form_submitted %}
+    <h2>Showing Submitted Data</h2>
+    <p>Name:{{user_name}}</p>
+    <p>Boolean Field:{{boolean_field}}</p>
+
+    {%endif %}
+</body>
+</html>

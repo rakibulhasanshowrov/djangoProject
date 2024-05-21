@@ -1,0 +1,12 @@
+{% extends 'crudop/crudop.html'%}
+{% block content %}
+<h1>{{title}}</h1>
+<form method="POST">
+    {{form.as_p}}
+    {%csrf_token%}
+    <input type="submit">
+</form>
+{%if form_submitted%}
+<h2>Album Added Succesfully</h2>
+{%endif%}
+{% endblock %}

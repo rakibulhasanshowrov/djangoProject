@@ -18,6 +18,10 @@ import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 print(BASE_DIR)
+#STATIC_DIR=BASE_DIR / 'static'
+#print(STATIC_DIR)
+
+
 TEMPLATES_DIR = BASE_DIR / 'templates'
 #TEMPLATES_DIR=os.path.join(BASE_DIR,'templates')
 print(TEMPLATES_DIR)
@@ -44,6 +48,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'first_app',
+    'second_app',
+    'crudop',
 ]
 
 MIDDLEWARE = [
@@ -80,13 +86,22 @@ WSGI_APPLICATION = 'My_first_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    "default": {
+        "ENGINE": "django.db.backends.mysql",
+        "NAME": "My_first_django",
+        "USER": "root",
+        "PASSWORD": "",
+        "HOST": "127.0.0.1",
+        "PORT": "3306",
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -121,8 +136,12 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
+# STATIC_ROOT = BASE_DIR / 'static'
 
 STATIC_URL = 'static/'
+STATICFILES_DIRS= [
+    BASE_DIR / 'static', 
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field

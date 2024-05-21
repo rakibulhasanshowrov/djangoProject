@@ -1,0 +1,23 @@
+{% extends 'crudop/crudop.html' %}
+{% block content %}
+<h1>{{tittle}}</h1>
+<h4>{{musician_info.first_name}}</h4>
+<h4>{{musician_info.last_name}}</h4>
+<h4>{{musician_info.instrument}}</h4>
+<h2><a href="{%url 'edit_artist_info' artist_id=musician_info.id %}" class="btn btn-success btn-md">Edit Artist Info</a></h2>
+<table class="table tabled-bordered">
+    <tr>
+        <th>Name</th>
+        <th>Release Date</th>
+        <th>Ratings</th>
+    </tr>
+    {%for value in artist_info%}
+    <tr>
+        <td>{{value.name}}</a></td>
+        <td>{{value.release_date}}</td>
+        <td>{{value.ratings}}</td>
+        <td><a href="{% url 'edit_album' album_id=value.id %}" class="btn btn-success btn-md">Edit Album</a></td>
+    </tr>
+    {%endfor%}
+
+{% endblock %}

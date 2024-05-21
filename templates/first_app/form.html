@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+    <!-- <h2>Html Form using Html Language</h2>
+    <form action="" method="post">
+        <label for="user_name" >User Name</label>
+        <input type="text" name="user_name" id="user_name" value="">
+        <br>
+        <label for="user_email" >User Email</label>
+        <input type="email" name="user_email" id="user_email" value="">
+        <br>
+        <input type="submit" name="submit" value="submit" required>
+    </form> -->
+
+    <h2>this form is from Form Library</h2>
+    <form action="" method="post">
+        {{form.as_p}}
+        {% csrf_token %}
+        <input type="submit" name="submit" value="submit" required>
+    </form>
+    <br>
+    {% if form_submitted %}
+    <h2>Showing Submitted Data</h2>
+    <p>Name:{{user_name}}</p>
+    <p>Date Of Birth:{{user_dob}}</p>
+    <p>Email:{{user_email}}</p>
+
+    {%endif %}
+</body>
+</html>
