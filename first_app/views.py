@@ -48,3 +48,4 @@ def addMusician(request):
             dict.update({'submitted':"Added Succesfully!"})
             
     return render(request,'first_app/addMusician.html',context=dict)
+
